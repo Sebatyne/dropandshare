@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <title>Drop & Share</title>
+    <link rel="stylesheet" href="/static/pure-min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="text/javascript" src="/static/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="/static/script.js"></script>
+</head>
+<body>
+<h1>Drop any file here and share it with every one</h1>
+<br>
+<div class="pure-form">
+    <fieldset>
+        <label for="name">Your Name :</label>
+        <input type="text" id="name" name="name" placeholder="Anonymous" />
+    </fieldset>
+<div>
+
+<form action="uploadFile" enctype="multipart/form-data" method="post" class="pure-form">
+    <fieldset id="upload-file-field">
+        <span id="upload-change-to-text" class="upload-change">⇄</span>
+        <label for="file" class="upload-label">Upload a file :</label>
+        <input type="file" id="file" name="file" class="upload-selection"/>
+        <button type="submit" class="pure-button pure-button-primary">Share it</button>
+    </fieldset>
+</form>
+
+<form action="uploadText" method="post" class="pure-form">
+    <fieldset id="upload-text-field">
+        <span id="upload-change-to-file" class="upload-change">⇄</span>
+        <label for="text" class="upload-label">Just share some text :</label>
+        <input type="text" id="text" name="text" class="upload-selection"/>
+        <button type="submit" class="pure-button pure-button-primary">Share it</button>
+    </fieldset>
+</form>
+
+<table id="list_documents" class="pure-table pure-table-horizontal pure-table-striped">
+    <thead>
+        <tr>
+            <th>Document</th>
+            <th>User</th>
+            <th>Date</th>
+            <th>Delete ?</th>
+        </tr>
+    </thead>
+    <tbody id="list_documents_content">
+    </tbody>
+</table>
+
+
+</body>
+</html>
